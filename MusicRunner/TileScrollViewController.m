@@ -9,7 +9,8 @@
 
 #import "TileScrollViewController.h"
 
-static NSString *IMAGE_STRING = @"road";
+static NSString *IMAGE_STRING = @"Space";
+static float dur = 10;
 
 @interface TileScrollViewController ()
 
@@ -26,13 +27,13 @@ static NSString *IMAGE_STRING = @"road";
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
     bgImage = [UIImage imageNamed:IMAGE_STRING];
-    self = [self initWithImage:bgImage verticalScroll:YES animationDuration:3.0 andCoder:aDecoder];
+    self = [self initWithImage:bgImage verticalScroll:YES animationDuration:dur andCoder:aDecoder];
     return self;
 }
 
 - (id) init {
     bgImage = [UIImage imageNamed:IMAGE_STRING];
-    self = [self initWithImage:bgImage verticalScroll:YES animationDuration:3.0 andCoder:nil];
+    self = [self initWithImage:bgImage verticalScroll:YES animationDuration:dur andCoder:nil];
     return self;
 }
 
@@ -60,15 +61,15 @@ static NSString *IMAGE_STRING = @"road";
     bgLayer.anchorPoint = CGPointMake(0, 1);
     [self.bgImageView.layer addSublayer:bgLayer];
     
-    CGPoint startPoint = CGPointZero;
-    CGPoint endPoint;
+    CGPoint startPoint;
+    CGPoint endPoint = CGPointZero;
     NSLog(@"%d", verticalScroll);
     NSLog(@"%f", animationDuration);
     if (verticalScroll) {
-        endPoint = CGPointMake(0, -imageSize.height);
+        startPoint = CGPointMake(0, -imageSize.height);
         bgLayer.frame = CGRectMake(0, 0, viewSize.width, viewSize.height + imageSize.height);
     } else {
-        endPoint = CGPointMake(-imageSize.width, 0);
+        startPoint = CGPointMake(-imageSize.width, 0);
         bgLayer.frame = CGRectMake(0, 0, viewSize.width + imageSize.width, viewSize.height);
     }
     
