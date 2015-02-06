@@ -43,6 +43,7 @@ static float dur = 10;
         bgImage = image;
         verticalScroll = vScroll;
         animationDuration = duration;
+        _core = [[MHCore alloc] init];
     }
     return self;
 }
@@ -63,8 +64,6 @@ static float dur = 10;
     
     CGPoint startPoint;
     CGPoint endPoint = CGPointZero;
-    NSLog(@"%d", verticalScroll);
-    NSLog(@"%f", animationDuration);
     if (verticalScroll) {
         startPoint = CGPointMake(0, -imageSize.height);
         bgLayer.frame = CGRectMake(0, 0, viewSize.width, viewSize.height + imageSize.height);

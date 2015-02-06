@@ -14,6 +14,36 @@
 		B9800EA11A8418340022ECC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9800EA01A8418340022ECC2 /* Images.xcassets */; };
 		B9800EA41A8418340022ECC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9800EA21A8418340022ECC2 /* LaunchScreen.xib */; };
 		B9800EB01A8418340022ECC2 /* MusicRunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9800EAF1A8418340022ECC2 /* MusicRunnerTests.m */; };
+		B9800EC01A8451160022ECC2 /* MHCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800EBD1A8451160022ECC2 /* MHCore.mm */; };
+		B9800EEE1A8451360022ECC2 /* mo-audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800EC51A8451360022ECC2 /* mo-audio.mm */; };
+		B9800EEF1A8451360022ECC2 /* mo-buffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800EC71A8451360022ECC2 /* mo-buffer.mm */; };
+		B9800EF01A8451360022ECC2 /* mo-fft.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800ECA1A8451360022ECC2 /* mo-fft.mm */; };
+		B9800EF11A8451360022ECC2 /* mo-fun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9800ECB1A8451360022ECC2 /* mo-fun.cpp */; };
+		B9800EF21A8451360022ECC2 /* mo-gfx.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800ECE1A8451360022ECC2 /* mo-gfx.mm */; };
+		B9800EF31A8451360022ECC2 /* mo-glut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9800ECF1A8451360022ECC2 /* mo-glut.cpp */; };
+		B9800EF41A8451360022ECC2 /* mo-thread.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800ED21A8451360022ECC2 /* mo-thread.mm */; };
+		B9800EF51A8451360022ECC2 /* mo-touch.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800ED41A8451360022ECC2 /* mo-touch.mm */; };
+		B9800EF61A8451360022ECC2 /* Delay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9800ED61A8451360022ECC2 /* Delay.cpp */; };
+		B9800EF71A8451360022ECC2 /* DelayL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9800ED81A8451360022ECC2 /* DelayL.cpp */; };
+		B9800EF81A8451360022ECC2 /* MidiFileIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9800EDB1A8451360022ECC2 /* MidiFileIn.cpp */; };
+		B9800EF91A8451360022ECC2 /* Stk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9800EDD1A8451360022ECC2 /* Stk.cpp */; };
+		B9800EFA1A8451360022ECC2 /* y-charting.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800EE11A8451360022ECC2 /* y-charting.mm */; };
+		B9800EFB1A8451360022ECC2 /* y-echo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800EE31A8451360022ECC2 /* y-echo.mm */; };
+		B9800EFC1A8451360022ECC2 /* y-entity.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800EE51A8451360022ECC2 /* y-entity.mm */; };
+		B9800EFE1A8451360022ECC2 /* y-particle.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800EE91A8451360022ECC2 /* y-particle.mm */; };
+		B9800EFF1A8451360022ECC2 /* y-score-reader.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800EEB1A8451360022ECC2 /* y-score-reader.mm */; };
+		B9800F001A8451360022ECC2 /* y-waveform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9800EEC1A8451360022ECC2 /* y-waveform.cpp */; };
+		B9800F031A84566B0022ECC2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9800F011A84563D0022ECC2 /* AudioToolbox.framework */; };
+		B9800F0F1A8578500022ECC2 /* adele-rolling_in_the_deep.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F051A8578500022ECC2 /* adele-rolling_in_the_deep.mid */; };
+		B9800F101A8578500022ECC2 /* ariana_grande-problem_ft_iggy_azalea.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F061A8578500022ECC2 /* ariana_grande-problem_ft_iggy_azalea.mid */; };
+		B9800F111A8578500022ECC2 /* david_guetta_ft_sia-titanium.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F071A8578500022ECC2 /* david_guetta_ft_sia-titanium.mid */; };
+		B9800F121A8578500022ECC2 /* idina_menzel-let_it_go.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F081A8578500022ECC2 /* idina_menzel-let_it_go.mid */; };
+		B9800F131A8578500022ECC2 /* katy_perry-firework.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F091A8578500022ECC2 /* katy_perry-firework.mid */; };
+		B9800F141A8578500022ECC2 /* katy_perry-roar.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F0A1A8578500022ECC2 /* katy_perry-roar.mid */; };
+		B9800F151A8578500022ECC2 /* meghan_trainor-all_about_that_bass.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F0B1A8578500022ECC2 /* meghan_trainor-all_about_that_bass.mid */; };
+		B9800F161A8578500022ECC2 /* sam_smith-im_not_the_only_one.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F0C1A8578500022ECC2 /* sam_smith-im_not_the_only_one.mid */; };
+		B9800F171A8578500022ECC2 /* sam_smith-stay_with_me.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F0D1A8578500022ECC2 /* sam_smith-stay_with_me.mid */; };
+		B9800F181A8578500022ECC2 /* taylor_swift-shake_it_off.mid in Resources */ = {isa = PBXBuildFile; fileRef = B9800F0E1A8578500022ECC2 /* taylor_swift-shake_it_off.mid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +70,59 @@
 		B9800EA91A8418340022ECC2 /* MusicRunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicRunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9800EAE1A8418340022ECC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9800EAF1A8418340022ECC2 /* MusicRunnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicRunnerTests.m; sourceTree = "<group>"; };
+		B9800EBC1A8451160022ECC2 /* MHCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHCore.h; sourceTree = "<group>"; };
+		B9800EBD1A8451160022ECC2 /* MHCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MHCore.mm; sourceTree = "<group>"; };
+		B9800EC41A8451360022ECC2 /* mo-audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-audio.h"; sourceTree = "<group>"; };
+		B9800EC51A8451360022ECC2 /* mo-audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "mo-audio.mm"; sourceTree = "<group>"; };
+		B9800EC61A8451360022ECC2 /* mo-buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-buffer.h"; sourceTree = "<group>"; };
+		B9800EC71A8451360022ECC2 /* mo-buffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "mo-buffer.mm"; sourceTree = "<group>"; };
+		B9800EC81A8451360022ECC2 /* mo-def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-def.h"; sourceTree = "<group>"; };
+		B9800EC91A8451360022ECC2 /* mo-fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-fft.h"; sourceTree = "<group>"; };
+		B9800ECA1A8451360022ECC2 /* mo-fft.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "mo-fft.mm"; sourceTree = "<group>"; };
+		B9800ECB1A8451360022ECC2 /* mo-fun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mo-fun.cpp"; sourceTree = "<group>"; };
+		B9800ECC1A8451360022ECC2 /* mo-fun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-fun.h"; sourceTree = "<group>"; };
+		B9800ECD1A8451360022ECC2 /* mo-gfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-gfx.h"; sourceTree = "<group>"; };
+		B9800ECE1A8451360022ECC2 /* mo-gfx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "mo-gfx.mm"; sourceTree = "<group>"; };
+		B9800ECF1A8451360022ECC2 /* mo-glut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mo-glut.cpp"; sourceTree = "<group>"; };
+		B9800ED01A8451360022ECC2 /* mo-glut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-glut.h"; sourceTree = "<group>"; };
+		B9800ED11A8451360022ECC2 /* mo-thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-thread.h"; sourceTree = "<group>"; };
+		B9800ED21A8451360022ECC2 /* mo-thread.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "mo-thread.mm"; sourceTree = "<group>"; };
+		B9800ED31A8451360022ECC2 /* mo-touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mo-touch.h"; sourceTree = "<group>"; };
+		B9800ED41A8451360022ECC2 /* mo-touch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "mo-touch.mm"; sourceTree = "<group>"; };
+		B9800ED61A8451360022ECC2 /* Delay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Delay.cpp; sourceTree = "<group>"; };
+		B9800ED71A8451360022ECC2 /* Delay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delay.h; sourceTree = "<group>"; };
+		B9800ED81A8451360022ECC2 /* DelayL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DelayL.cpp; sourceTree = "<group>"; };
+		B9800ED91A8451360022ECC2 /* DelayL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayL.h; sourceTree = "<group>"; };
+		B9800EDA1A8451360022ECC2 /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		B9800EDB1A8451360022ECC2 /* MidiFileIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiFileIn.cpp; sourceTree = "<group>"; };
+		B9800EDC1A8451360022ECC2 /* MidiFileIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiFileIn.h; sourceTree = "<group>"; };
+		B9800EDD1A8451360022ECC2 /* Stk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stk.cpp; sourceTree = "<group>"; };
+		B9800EDE1A8451360022ECC2 /* Stk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stk.h; sourceTree = "<group>"; };
+		B9800EE01A8451360022ECC2 /* y-charting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "y-charting.h"; sourceTree = "<group>"; };
+		B9800EE11A8451360022ECC2 /* y-charting.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "y-charting.mm"; sourceTree = "<group>"; };
+		B9800EE21A8451360022ECC2 /* y-echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "y-echo.h"; sourceTree = "<group>"; };
+		B9800EE31A8451360022ECC2 /* y-echo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "y-echo.mm"; sourceTree = "<group>"; };
+		B9800EE41A8451360022ECC2 /* y-entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "y-entity.h"; sourceTree = "<group>"; };
+		B9800EE51A8451360022ECC2 /* y-entity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "y-entity.mm"; sourceTree = "<group>"; };
+		B9800EE61A8451360022ECC2 /* y-fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "y-fft.h"; sourceTree = "<group>"; };
+		B9800EE71A8451360022ECC2 /* y-fft.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "y-fft.mm"; sourceTree = "<group>"; };
+		B9800EE81A8451360022ECC2 /* y-particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "y-particle.h"; sourceTree = "<group>"; };
+		B9800EE91A8451360022ECC2 /* y-particle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "y-particle.mm"; sourceTree = "<group>"; };
+		B9800EEA1A8451360022ECC2 /* y-score-reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "y-score-reader.h"; sourceTree = "<group>"; };
+		B9800EEB1A8451360022ECC2 /* y-score-reader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "y-score-reader.mm"; sourceTree = "<group>"; };
+		B9800EEC1A8451360022ECC2 /* y-waveform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "y-waveform.cpp"; sourceTree = "<group>"; };
+		B9800EED1A8451360022ECC2 /* y-waveform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "y-waveform.h"; sourceTree = "<group>"; };
+		B9800F011A84563D0022ECC2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B9800F051A8578500022ECC2 /* adele-rolling_in_the_deep.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "adele-rolling_in_the_deep.mid"; sourceTree = "<group>"; };
+		B9800F061A8578500022ECC2 /* ariana_grande-problem_ft_iggy_azalea.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "ariana_grande-problem_ft_iggy_azalea.mid"; sourceTree = "<group>"; };
+		B9800F071A8578500022ECC2 /* david_guetta_ft_sia-titanium.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "david_guetta_ft_sia-titanium.mid"; sourceTree = "<group>"; };
+		B9800F081A8578500022ECC2 /* idina_menzel-let_it_go.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "idina_menzel-let_it_go.mid"; sourceTree = "<group>"; };
+		B9800F091A8578500022ECC2 /* katy_perry-firework.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "katy_perry-firework.mid"; sourceTree = "<group>"; };
+		B9800F0A1A8578500022ECC2 /* katy_perry-roar.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "katy_perry-roar.mid"; sourceTree = "<group>"; };
+		B9800F0B1A8578500022ECC2 /* meghan_trainor-all_about_that_bass.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "meghan_trainor-all_about_that_bass.mid"; sourceTree = "<group>"; };
+		B9800F0C1A8578500022ECC2 /* sam_smith-im_not_the_only_one.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "sam_smith-im_not_the_only_one.mid"; sourceTree = "<group>"; };
+		B9800F0D1A8578500022ECC2 /* sam_smith-stay_with_me.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "sam_smith-stay_with_me.mid"; sourceTree = "<group>"; };
+		B9800F0E1A8578500022ECC2 /* taylor_swift-shake_it_off.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "taylor_swift-shake_it_off.mid"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9800F031A84566B0022ECC2 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +147,7 @@
 		B9800E871A8418340022ECC2 = {
 			isa = PBXGroup;
 			children = (
+				B9800F011A84563D0022ECC2 /* AudioToolbox.framework */,
 				B9800E921A8418340022ECC2 /* MusicRunner */,
 				B9800EAC1A8418340022ECC2 /* MusicRunnerTests */,
 				B9800E911A8418340022ECC2 /* Products */,
@@ -81,6 +166,9 @@
 		B9800E921A8418340022ECC2 /* MusicRunner */ = {
 			isa = PBXGroup;
 			children = (
+				B9800F041A8578500022ECC2 /* midi */,
+				B9800EC21A8451360022ECC2 /* api */,
+				B9800EBB1A8451160022ECC2 /* core */,
 				B9800E971A8418340022ECC2 /* AppDelegate.h */,
 				B9800E981A8418340022ECC2 /* AppDelegate.m */,
 				B9800E9A1A8418340022ECC2 /* TileScrollViewController.h */,
@@ -117,6 +205,103 @@
 				B9800EAE1A8418340022ECC2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9800EBB1A8451160022ECC2 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				B9800EBC1A8451160022ECC2 /* MHCore.h */,
+				B9800EBD1A8451160022ECC2 /* MHCore.mm */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		B9800EC21A8451360022ECC2 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				B9800EC31A8451360022ECC2 /* momu */,
+				B9800ED51A8451360022ECC2 /* stk */,
+				B9800EDF1A8451360022ECC2 /* y-api */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		B9800EC31A8451360022ECC2 /* momu */ = {
+			isa = PBXGroup;
+			children = (
+				B9800EC41A8451360022ECC2 /* mo-audio.h */,
+				B9800EC51A8451360022ECC2 /* mo-audio.mm */,
+				B9800EC61A8451360022ECC2 /* mo-buffer.h */,
+				B9800EC71A8451360022ECC2 /* mo-buffer.mm */,
+				B9800EC81A8451360022ECC2 /* mo-def.h */,
+				B9800EC91A8451360022ECC2 /* mo-fft.h */,
+				B9800ECA1A8451360022ECC2 /* mo-fft.mm */,
+				B9800ECB1A8451360022ECC2 /* mo-fun.cpp */,
+				B9800ECC1A8451360022ECC2 /* mo-fun.h */,
+				B9800ECD1A8451360022ECC2 /* mo-gfx.h */,
+				B9800ECE1A8451360022ECC2 /* mo-gfx.mm */,
+				B9800ECF1A8451360022ECC2 /* mo-glut.cpp */,
+				B9800ED01A8451360022ECC2 /* mo-glut.h */,
+				B9800ED11A8451360022ECC2 /* mo-thread.h */,
+				B9800ED21A8451360022ECC2 /* mo-thread.mm */,
+				B9800ED31A8451360022ECC2 /* mo-touch.h */,
+				B9800ED41A8451360022ECC2 /* mo-touch.mm */,
+			);
+			path = momu;
+			sourceTree = "<group>";
+		};
+		B9800ED51A8451360022ECC2 /* stk */ = {
+			isa = PBXGroup;
+			children = (
+				B9800ED61A8451360022ECC2 /* Delay.cpp */,
+				B9800ED71A8451360022ECC2 /* Delay.h */,
+				B9800ED81A8451360022ECC2 /* DelayL.cpp */,
+				B9800ED91A8451360022ECC2 /* DelayL.h */,
+				B9800EDA1A8451360022ECC2 /* Filter.h */,
+				B9800EDB1A8451360022ECC2 /* MidiFileIn.cpp */,
+				B9800EDC1A8451360022ECC2 /* MidiFileIn.h */,
+				B9800EDD1A8451360022ECC2 /* Stk.cpp */,
+				B9800EDE1A8451360022ECC2 /* Stk.h */,
+			);
+			path = stk;
+			sourceTree = "<group>";
+		};
+		B9800EDF1A8451360022ECC2 /* y-api */ = {
+			isa = PBXGroup;
+			children = (
+				B9800EE01A8451360022ECC2 /* y-charting.h */,
+				B9800EE11A8451360022ECC2 /* y-charting.mm */,
+				B9800EE21A8451360022ECC2 /* y-echo.h */,
+				B9800EE31A8451360022ECC2 /* y-echo.mm */,
+				B9800EE41A8451360022ECC2 /* y-entity.h */,
+				B9800EE51A8451360022ECC2 /* y-entity.mm */,
+				B9800EE61A8451360022ECC2 /* y-fft.h */,
+				B9800EE71A8451360022ECC2 /* y-fft.mm */,
+				B9800EE81A8451360022ECC2 /* y-particle.h */,
+				B9800EE91A8451360022ECC2 /* y-particle.mm */,
+				B9800EEA1A8451360022ECC2 /* y-score-reader.h */,
+				B9800EEB1A8451360022ECC2 /* y-score-reader.mm */,
+				B9800EEC1A8451360022ECC2 /* y-waveform.cpp */,
+				B9800EED1A8451360022ECC2 /* y-waveform.h */,
+			);
+			path = "y-api";
+			sourceTree = "<group>";
+		};
+		B9800F041A8578500022ECC2 /* midi */ = {
+			isa = PBXGroup;
+			children = (
+				B9800F051A8578500022ECC2 /* adele-rolling_in_the_deep.mid */,
+				B9800F061A8578500022ECC2 /* ariana_grande-problem_ft_iggy_azalea.mid */,
+				B9800F071A8578500022ECC2 /* david_guetta_ft_sia-titanium.mid */,
+				B9800F081A8578500022ECC2 /* idina_menzel-let_it_go.mid */,
+				B9800F091A8578500022ECC2 /* katy_perry-firework.mid */,
+				B9800F0A1A8578500022ECC2 /* katy_perry-roar.mid */,
+				B9800F0B1A8578500022ECC2 /* meghan_trainor-all_about_that_bass.mid */,
+				B9800F0C1A8578500022ECC2 /* sam_smith-im_not_the_only_one.mid */,
+				B9800F0D1A8578500022ECC2 /* sam_smith-stay_with_me.mid */,
+				B9800F0E1A8578500022ECC2 /* taylor_swift-shake_it_off.mid */,
+			);
+			path = midi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +385,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9800E9F1A8418340022ECC2 /* Main.storyboard in Resources */,
+				B9800F141A8578500022ECC2 /* katy_perry-roar.mid in Resources */,
 				B9800EA41A8418340022ECC2 /* LaunchScreen.xib in Resources */,
+				B9800F121A8578500022ECC2 /* idina_menzel-let_it_go.mid in Resources */,
+				B9800F161A8578500022ECC2 /* sam_smith-im_not_the_only_one.mid in Resources */,
+				B9800F111A8578500022ECC2 /* david_guetta_ft_sia-titanium.mid in Resources */,
 				B9800EA11A8418340022ECC2 /* Images.xcassets in Resources */,
+				B9800F181A8578500022ECC2 /* taylor_swift-shake_it_off.mid in Resources */,
+				B9800F151A8578500022ECC2 /* meghan_trainor-all_about_that_bass.mid in Resources */,
+				B9800F101A8578500022ECC2 /* ariana_grande-problem_ft_iggy_azalea.mid in Resources */,
+				B9800F171A8578500022ECC2 /* sam_smith-stay_with_me.mid in Resources */,
+				B9800F0F1A8578500022ECC2 /* adele-rolling_in_the_deep.mid in Resources */,
+				B9800F131A8578500022ECC2 /* katy_perry-firework.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +414,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9800EFB1A8451360022ECC2 /* y-echo.mm in Sources */,
 				B9800E9C1A8418340022ECC2 /* TileScrollViewController.m in Sources */,
+				B9800EF81A8451360022ECC2 /* MidiFileIn.cpp in Sources */,
 				B9800E991A8418340022ECC2 /* AppDelegate.m in Sources */,
+				B9800F001A8451360022ECC2 /* y-waveform.cpp in Sources */,
+				B9800EF41A8451360022ECC2 /* mo-thread.mm in Sources */,
+				B9800EF21A8451360022ECC2 /* mo-gfx.mm in Sources */,
+				B9800EFC1A8451360022ECC2 /* y-entity.mm in Sources */,
+				B9800EF31A8451360022ECC2 /* mo-glut.cpp in Sources */,
 				B9800E961A8418340022ECC2 /* main.m in Sources */,
+				B9800EEE1A8451360022ECC2 /* mo-audio.mm in Sources */,
+				B9800EFE1A8451360022ECC2 /* y-particle.mm in Sources */,
+				B9800EFF1A8451360022ECC2 /* y-score-reader.mm in Sources */,
+				B9800EFA1A8451360022ECC2 /* y-charting.mm in Sources */,
+				B9800EF51A8451360022ECC2 /* mo-touch.mm in Sources */,
+				B9800EF61A8451360022ECC2 /* Delay.cpp in Sources */,
+				B9800EF91A8451360022ECC2 /* Stk.cpp in Sources */,
+				B9800EC01A8451160022ECC2 /* MHCore.mm in Sources */,
+				B9800EF71A8451360022ECC2 /* DelayL.cpp in Sources */,
+				B9800EF11A8451360022ECC2 /* mo-fun.cpp in Sources */,
+				B9800EEF1A8451360022ECC2 /* mo-buffer.mm in Sources */,
+				B9800EF01A8451360022ECC2 /* mo-fft.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

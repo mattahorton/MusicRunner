@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MHCore.h"
 
 @interface TileScrollViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIImageView *bgImageView;
+@property (strong, nonatomic) MHCore *core;
 
 - (id) initWithImage:(UIImage*)cloudsImage verticalScroll:(BOOL)verticalScroll animationDuration:(CFTimeInterval)animationDuration andCoder:(NSCoder *) coder;
 

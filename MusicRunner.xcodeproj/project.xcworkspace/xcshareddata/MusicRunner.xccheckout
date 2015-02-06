@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C0428AA9-DCAE-4E1D-A8E9-471387237DFE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MusicRunner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>71585D60D41EFFB931DB7A954FBF601BEA890432</key>
+		<string>https://github.com/mattahorton/MusicRunner.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MusicRunner.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>71585D60D41EFFB931DB7A954FBF601BEA890432</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mattahorton/MusicRunner.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>71585D60D41EFFB931DB7A954FBF601BEA890432</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>71585D60D41EFFB931DB7A954FBF601BEA890432</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MusicRunner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
