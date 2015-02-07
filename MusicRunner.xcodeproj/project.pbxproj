@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B9800E961A8418340022ECC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9800E951A8418340022ECC2 /* main.m */; };
 		B9800E991A8418340022ECC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9800E981A8418340022ECC2 /* AppDelegate.m */; };
-		B9800E9C1A8418340022ECC2 /* TileScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9800E9B1A8418340022ECC2 /* TileScrollViewController.m */; };
+		B9800E9C1A8418340022ECC2 /* TileScrollViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9800E9B1A8418340022ECC2 /* TileScrollViewController.mm */; };
 		B9800E9F1A8418340022ECC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9800E9D1A8418340022ECC2 /* Main.storyboard */; };
 		B9800EA11A8418340022ECC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9800EA01A8418340022ECC2 /* Images.xcassets */; };
 		B9800EA41A8418340022ECC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9800EA21A8418340022ECC2 /* LaunchScreen.xib */; };
@@ -63,7 +63,7 @@
 		B9800E971A8418340022ECC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9800E981A8418340022ECC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B9800E9A1A8418340022ECC2 /* TileScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileScrollViewController.h; sourceTree = "<group>"; };
-		B9800E9B1A8418340022ECC2 /* TileScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TileScrollViewController.m; sourceTree = "<group>"; };
+		B9800E9B1A8418340022ECC2 /* TileScrollViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TileScrollViewController.mm; sourceTree = "<group>"; };
 		B9800E9E1A8418340022ECC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9800EA01A8418340022ECC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B9800EA31A8418340022ECC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 				B9800E971A8418340022ECC2 /* AppDelegate.h */,
 				B9800E981A8418340022ECC2 /* AppDelegate.m */,
 				B9800E9A1A8418340022ECC2 /* TileScrollViewController.h */,
-				B9800E9B1A8418340022ECC2 /* TileScrollViewController.m */,
+				B9800E9B1A8418340022ECC2 /* TileScrollViewController.mm */,
 				B9800E9D1A8418340022ECC2 /* Main.storyboard */,
 				B9800EA01A8418340022ECC2 /* Images.xcassets */,
 				B9800EA21A8418340022ECC2 /* LaunchScreen.xib */,
@@ -415,7 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9800EFB1A8451360022ECC2 /* y-echo.mm in Sources */,
-				B9800E9C1A8418340022ECC2 /* TileScrollViewController.m in Sources */,
+				B9800E9C1A8418340022ECC2 /* TileScrollViewController.mm in Sources */,
 				B9800EF81A8451360022ECC2 /* MidiFileIn.cpp in Sources */,
 				B9800E991A8418340022ECC2 /* AppDelegate.m in Sources */,
 				B9800F001A8451360022ECC2 /* y-waveform.cpp in Sources */,

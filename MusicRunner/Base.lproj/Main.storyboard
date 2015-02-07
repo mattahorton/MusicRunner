@@ -8,7 +8,7 @@
         <scene sceneID="fvc-bn-2Zm">
             <objects>
                 <viewController id="VQW-cH-1q0" customClass="TileScrollViewController" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Ku-I0-xNg">
+                    <imageView key="view" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Ku-I0-xNg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>

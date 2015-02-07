@@ -9,6 +9,8 @@
 #import "MHCore.h"
 #import "mo-audio.h"
 #import "mo-touch.h"
+#import "MidiFileIn.h"
+#import <vector>
 
 #define SRATE 24000
 #define FRAMESIZE 512
@@ -24,12 +26,18 @@ float * g_buffer = NULL;
 
 @implementation MHCore {
     long framesize;
+    NSString *filePath;
 }
 
 -(instancetype)init {
     self = [super init];
     if (self) {
         [self coreInit];
+        filePath = [[NSBundle mainBundle] pathForResource:@"meghan_trainor-all_about_that_bass"
+                                                             ofType:@"mid"];
+//        stk::MidiFileIn mparser = stk::MidiFileIn([filePath UTF8String]);
+//        NSLog(@"%f",mparser.getBPM());
+        
     }
     return self;
 }
@@ -60,6 +68,7 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
 {
     // zero!!!
     memset( g_vertices, 0, sizeof(SAMPLE)*FRAMESIZE*2 );
+    memset( buffer, 0, sizeof(SAMPLE)*FRAMESIZE );
     
     // save the num frames
     g_numFrames = numFrames;
@@ -133,25 +142,25 @@ void touch_callback( NSSet * touches, UIView * view,
 // initialize the engine (audio, grx, interaction)
 void GLoilerInit()
 {
-    NSLog( @"init..." );
-    
-    // set touch callback
-    MoTouch::addCallback( touch_callback, NULL );
-    
-    // init
-    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
-    if( !result )
-    {
-        // do not do this:
-        int * p = 0;
-        *p = 0;
-    }
-    // start
-    result = MoAudio::start( audio_callback, NULL );
-    if( !result )
-    {
-        // do not do this:
-        int * p = 0;
-        *p = 0;
-    }
+//    NSLog( @"init..." );
+//    
+//    // set touch callback
+//    MoTouch::addCallback( touch_callback, NULL );
+//    
+//    // init
+//    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
+//    if( !result )
+//    {
+//        // do not do this:
+//        int * p = 0;
+//        *p = 0;
+//    }
+//    // start
+//    result = MoAudio::start( audio_callback, NULL );
+//    if( !result )
+//    {
+//        // do not do this:
+//        int * p = 0;
+//        *p = 0;
+//    }
 }
