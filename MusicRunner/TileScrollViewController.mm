@@ -45,7 +45,7 @@ static float dur = 10;
         bgImage = image;
         verticalScroll = vScroll;
         animationDuration = duration;
-        _core = [[MHCore alloc] init];
+        _core = [MHCore sharedInstance];
     }
     return self;
 }
