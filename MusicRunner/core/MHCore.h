@@ -14,23 +14,16 @@
 #import "y-score-reader.h"
 #import "AEAudioController.h"
 
-#ifndef __GLoiler__renderer__
-#define __GLoiler__renderer__
+@interface MHCore : NSObject {
+    YScoreReader scoreReader;
+}
 
-// initialize the engine (audio, grx, interaction)
-void GLoilerInit();
-
-#endif /* defined(__GLoiler__renderer__) */
-
-@interface MHCore : NSObject
-
-@property (nonatomic) AEAudioController *audioController;
+@property (strong, nonatomic) AEAudioController *audioController;
 @property (strong, nonatomic) MHMediator *mediator;
-@property (assign, nonatomic) YScoreReader scoreReader;
+//@property (assign) YScoreReader scoreReader;
 
 + (MHCore *)sharedInstance;
 
 -(void) coreInit;
--(void) PlayMIDI;
 
 @end

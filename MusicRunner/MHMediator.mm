@@ -45,7 +45,7 @@
         if ((sampleCount % per) == 0) {
             
             // callback on period
-            cb([MHCore sharedInstance].scoreReader);
+            cb();
         }
         
     }
