@@ -14,6 +14,15 @@
 #define FRAMESIZE 512
 #define NUM_CHANNELS 2
 #define BPM 100
+#define FILE "watchtower"
+//#define FILE "taylor_swift-shake_it_off"
+//#define FILE "katy_perry-roar"
+//#define FILE "ariana_grande-problem_ft_iggy_azalea"
+//#define FILE "idina_menzel-let_it_go"
+//#define FILE "katy_perry-firework"
+//#define FILE "david_guetta_ft_sia-titanium"
+//#define FILE "sam_smith-im_not_the_only_one"
+//#define FILE "sam_smith-stay_with_me"
 
 static HSTREAM stream;
 static BASS_MIDI_FONT fonts[2];
@@ -78,7 +87,7 @@ void bassInit(){
     
     //might not need 16 input channels but it also might not hurt anything
     
-    stream = BASS_MIDI_StreamCreateFile(false, [[[NSBundle mainBundle] pathForResource:@"watchtower" ofType:@"mid"] UTF8String], 0, 0, BASS_STREAM_AUTOFREE, 0);
+    stream = BASS_MIDI_StreamCreateFile(false, [[[NSBundle mainBundle] pathForResource:@FILE ofType:@"mid"] UTF8String], 0, 0, BASS_STREAM_AUTOFREE, 0);
     
     // set up midi sync to get midi events
     BASS_ChannelSetSync(stream, BASS_SYNC_MIDI_EVENT|BASS_SYNC_MIXTIME, MIDI_EVENT_NOTE, NoteProc, 0);
