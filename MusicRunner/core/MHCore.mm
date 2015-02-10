@@ -30,6 +30,9 @@ float * g_buffer = NULL;
 
 static HSTREAM stream;
 static BASS_MIDI_FONT fonts[2];
+int prevNoteVal;
+MHMediator *g_mediator;
+float sampRate;
 
 
 @implementation MHCore {
@@ -59,11 +62,11 @@ static BASS_MIDI_FONT fonts[2];
     self = [super init];
     if (self) {
         self.mediator = [MHMediator sharedInstance];
+        g_mediator = self.mediator;
         filePath = [[NSBundle mainBundle] pathForResource:@"watchtower"
                                                    ofType:@"mid"];
         scoreReader = YScoreReader::YScoreReader();
         [self coreInit];
-        NSLog(@"%p reader init",&scoreReader);
     }
     return self;
 }
@@ -84,6 +87,8 @@ static BASS_MIDI_FONT fonts[2];
     }
     
     NSTimeInterval dur = self.audioController.currentBufferDuration;
+    
+    sampRate = self.audioController.inputAudioDescription.mSampleRate;
     
     framesize = AEConvertSecondsToFrames(self.audioController, dur);
     
@@ -113,27 +118,40 @@ static BASS_MIDI_FONT fonts[2];
     scoreReader.load([filePath UTF8String]);
     double bpm = scoreReader.getBPM();
     
-    
-    //START BASS
-    bassInit();
-    
-    
 
     // REGISTER BEAT CALLBACK
     
-    [self.mediator registerCallbackWithPeriod:(framesize*60/(bpm*64)) andCallback:&nextMidiNote];
+//    [self.mediator registerCallbackWithPeriod:(framesize*60/(bpm)) andCallback:&nextMidiNote];
+//    [self.mediator registerCallbackWithCount:1 andCallback:&nextMidiNote andArg:4];
     
     
     // START AUDIO
     [self.audioController addChannels:@[audioOut]];
+    
+    //START BASS
+    bassInit();
 }
 
-void nextMidiNote (/*YScoreReader reader*/){
-//    NSLog(@"Note");
-//    NSLog(@"%f",[MHCore sharedInstance]->scoreReader.getBPM());
-    [MHCore sharedInstance]->scoreReader.next(7);
-    const NoteEvent *note = [MHCore sharedInstance]->scoreReader.current(7);
-//    NSLog(@"%d",note->data2);
+void nextMidiNote (int track){
+    [MHCore sharedInstance]->scoreReader.next(track);
+    const NoteEvent *note = [MHCore sharedInstance]->scoreReader.current(track);
+    int startNext = [g_mediator getCurrentSamp];
+    float untilNext;
+
+    if(note){
+//        NSLog(@"note");
+        BASS_MIDI_StreamEvent(stream, 0,MIDI_EVENT_NOTE,MAKEWORD(prevNoteVal,0));
+        BASS_MIDI_StreamEvent(stream, 0,MIDI_EVENT_NOTE,MAKEWORD((int)note->data2,20));
+        prevNoteVal = (int)note->data2;
+//        NSLog(@"%f",note->untilNext);
+        untilNext = note->untilNext;
+        untilNext = untilNext * -1;
+        startNext = (int)untilNext + startNext;
+//        NSLog(@"%d",startNext);
+        [g_mediator registerCallbackWithCount: startNext andCallback:&nextMidiNote andArg:4];
+    }
+    
+    
     
     delete note;
 }
@@ -156,7 +174,7 @@ void bassInit(){
     
     // initialize default output device
     
-    if (!BASS_Init(-1,SRATE,0,0,NULL))
+    if (!BASS_Init(-1,sampRate,0,0,NULL))
         
         NSLog(@"Can't initialize output device");
     
@@ -164,7 +182,8 @@ void bassInit(){
     
     //might not need 16 input channels but it also might not hurt anything
     
-    stream=BASS_MIDI_StreamCreate(NUM_CHANNELS,0,1); // create the MIDI stream (16 MIDI channels for device input + 1 for keyboard input)
+//    stream=BASS_MIDI_StreamCreate(NUM_CHANNELS,0,1); // create the MIDI stream (16 MIDI channels for device input + 1 for keyboard input)
+    stream = BASS_MIDI_StreamCreateFile(false, [[[NSBundle mainBundle] pathForResource:@"watchtower" ofType:@"mid"] UTF8String], 0, 0, BASS_STREAM_AUTOFREE, 0);
     
     
     
@@ -228,8 +247,6 @@ void bassInit(){
     
     
     BASS_MIDI_StreamSetFonts(stream, fonts, 1);
-    
-    BASS_MIDI_StreamEvent(stream, 0,MIDI_EVENT_NOTE,MAKEWORD(64,100));
     
 }
 

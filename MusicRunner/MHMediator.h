@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "y-score-reader.h"
 
-typedef void (*Callback)();
+typedef void (*Callback)(int);
 
 @interface MHMediator : NSObject
 
@@ -18,5 +18,6 @@ typedef void (*Callback)();
 -(void) updateCountWithSampleCount:(int)sampleCount;
 -(int) getCurrentSamp;
 -(void) registerCallbackWithPeriod:(int) period andCallback:(Callback) cb;
+-(void)registerCallbackWithCount:(int) count andCallback: (Callback) cb andArg:(int) arg;
 
 @end

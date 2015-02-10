@@ -15,6 +15,7 @@
     int currentSamp;
     std::vector<int> periods;
     std::vector<Callback> callbacks;
+    std::vector<int> intArgs;
 }
 
 + (MHMediator *)sharedInstance {
@@ -37,15 +38,21 @@
     currentSamp = sampleCount;
     int per;
     Callback cb;
+    int intArg;
     
     for (int i = 0; i < periods.size(); i++) {
         per = periods.at(i);
         cb = callbacks.at(i);
+        intArg = intArgs.at(i);
         
-        if ((sampleCount % per) == 0) {
-            
-            // callback on period
-            cb();
+//        if ((sampleCount % per) == 0) {
+//            
+//            // callback on period
+//            cb();
+//        }
+        
+        if (sampleCount == per) {
+            cb(intArg);
         }
         
     }
@@ -58,6 +65,12 @@
 -(void)registerCallbackWithPeriod:(int) period andCallback: (Callback) cb{
     periods.push_back(period);
     callbacks.push_back(cb);
+}
+
+-(void)registerCallbackWithCount:(int) count andCallback: (Callback) cb andArg:(int) arg{
+    periods.push_back(count);
+    callbacks.push_back(cb);
+    intArgs.push_back(arg);
 }
 
 @end
