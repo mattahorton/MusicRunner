@@ -10,17 +10,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "MHMediator.h"
-#import "y-score-reader.h"
-#import "AEAudioController.h"
 
-@interface MHCore : NSObject {
-    YScoreReader scoreReader;
-}
-
-@property (strong, nonatomic) AEAudioController *audioController;
-@property (strong, nonatomic) MHMediator *mediator;
-//@property (assign) YScoreReader scoreReader;
+@interface MHCore : NSObject
 
 + (MHCore *)sharedInstance;
 

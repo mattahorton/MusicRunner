@@ -7,12 +7,6 @@
 //
 
 #import "MHCore.h"
-#import "mo-audio.h"
-#import "mo-touch.h"
-#import "y-score-reader.h"
-#import <vector>
-#import <AVFoundation/AVFoundation.h>
-#import "AEBlockChannel.h"
 #import "bassmidi.h"
 #import "bass.h"
 
@@ -21,24 +15,11 @@
 #define NUM_CHANNELS 2
 #define BPM 100
 
-// buffer
-SAMPLE g_vertices[FRAMESIZE*2];
-UInt32 g_numFrames;
-
-// buffer
-float * g_buffer = NULL;
-
 static HSTREAM stream;
 static BASS_MIDI_FONT fonts[2];
-int prevNoteVal;
-MHMediator *g_mediator;
-float sampRate;
 
 
 @implementation MHCore {
-    long framesize;
-    NSString *filePath;
-    AEBlockChannel *audioOut;
 }
 
 + (MHCore *)sharedInstance {
@@ -61,77 +42,14 @@ float sampRate;
 -(instancetype)init {
     self = [super init];
     if (self) {
-        self.mediator = [MHMediator sharedInstance];
-        g_mediator = self.mediator;
-        filePath = [[NSBundle mainBundle] pathForResource:@"watchtower"
-                                                   ofType:@"mid"];
-        scoreReader = YScoreReader::YScoreReader();
         [self coreInit];
     }
     return self;
 }
 
 -(void) coreInit {
-//    stk::Stk::setRawwavePath([[[NSBundle mainBundle] pathForResource:@"rawwaves" ofType:@"bundle"] UTF8String]);
-    
-    //SET UP TAAE
-    
-    self.audioController = [[AEAudioController alloc]
-                               initWithAudioDescription:[AEAudioController nonInterleavedFloatStereoAudioDescription]
-                               inputEnabled:YES];
-    
-    NSError *errorAudioSetup = NULL;
-    BOOL result = [self.audioController start:&errorAudioSetup];
-    if ( !result ) {
-        NSLog(@"Error starting audio engine: %@", errorAudioSetup.localizedDescription);
-    }
-    
-    NSTimeInterval dur = self.audioController.currentBufferDuration;
-    
-    sampRate = self.audioController.inputAudioDescription.mSampleRate;
-    
-    framesize = AEConvertSecondsToFrames(self.audioController, dur);
-    
-    audioOut = [AEBlockChannel channelWithBlock:^(const AudioTimeStamp  *time,
-                                                  UInt32 frames,
-                                                  AudioBufferList *audio) {
-        
-        for ( int i=0; i<frames; i++ ) {
-            ((float*)audio->mBuffers[0].mData)[i] = ((float*)audio->mBuffers[1].mData)[i] = 0;
-        }
-        
-    }];
-    
-    
-    // START AUDIO
-    [self.audioController addChannels:@[audioOut]];
-    
     //START BASS
     bassInit();
-}
-
-void nextMidiNote (int track){
-    [MHCore sharedInstance]->scoreReader.next(track);
-    const NoteEvent *note = [MHCore sharedInstance]->scoreReader.current(track);
-    int startNext = [g_mediator getCurrentSamp];
-    float untilNext;
-
-    if(note){
-//        NSLog(@"note");
-        BASS_MIDI_StreamEvent(stream, 0,MIDI_EVENT_NOTE,MAKEWORD(prevNoteVal,0));
-        BASS_MIDI_StreamEvent(stream, 0,MIDI_EVENT_NOTE,MAKEWORD((int)note->data2,20));
-        prevNoteVal = (int)note->data2;
-//        NSLog(@"%f",note->untilNext);
-        untilNext = note->untilNext;
-        untilNext = untilNext * -1;
-        startNext = (int)untilNext + startNext;
-//        NSLog(@"%d",startNext);
-        [g_mediator registerCallbackWithCount: startNext andCallback:&nextMidiNote andArg:4];
-    }
-    
-    
-    
-    delete note;
 }
 
 void bassInit(){
@@ -152,7 +70,7 @@ void bassInit(){
     
     // initialize default output device
     
-    if (!BASS_Init(-1,sampRate,0,0,NULL))
+    if (!BASS_Init(-1,SRATE,0,0,NULL))
         
         NSLog(@"Can't initialize output device");
     
