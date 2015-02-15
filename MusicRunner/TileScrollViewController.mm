@@ -9,8 +9,8 @@
 
 #import "TileScrollViewController.h"
 
-static NSString *IMAGE_STRING = @"Space";
-static float dur = 10;
+static NSString *IMAGE_STRING = @"SpaceBlur";
+static float dur = 2;
 
 @interface TileScrollViewController ()
 
@@ -83,53 +83,16 @@ static float dur = 10;
     [self applyBgLayerAnimation];
     
     
-    
-    shipLayer = [CALayer layer];
-    UIImage *viper = [UIImage imageNamed:@"viper"];
-    shipLayer.backgroundColor = [UIColor colorWithPatternImage:viper].CGColor;
-    [shipLayer setBounds:CGRectMake(0.0, 0.0, viper.size.width, viper.size.height)];
-    shipLayer.transform = CATransform3DMakeScale(.3, -.3, .3);
-    [shipLayer setPosition:CGPointMake(100.0,400.0)];
-    [shipLayer setZPosition:5.0];
+    shipLayer = [self newCALayerWithNSString:@"viper" andCATransform3D:CATransform3DMakeScale(.3, -.3, .3) andCGPoint:CGPointMake(100.0,400.0)];
     [self.bgImageView.layer addSublayer:shipLayer];
+    
+    CALayer *cylon = [self newCALayerWithNSString:@"Cylon" andCATransform3D:CATransform3DMakeScale(.3, -.3, .3) andCGPoint:CGPointMake(100.0,100.0)];
+    [self.bgImageView.layer addSublayer:cylon];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    // Use animation to move ship a large distance
     
-//    for (UITouch *touch in touches) {
-//        CGPoint touchLocation = [touch locationInView:self.view];
-//        for (id sublayer in self.view.layer.sublayers) {
-//            BOOL touchInLayer = NO;
-//            if ([sublayer isKindOfClass:[CAShapeLayer class]]) {
-//                CAShapeLayer *shapeLayer = sublayer;
-//                if (CGPathContainsPoint(shapeLayer.path, 0, touchLocation, YES)) {
-//                    // This touch is in this shape layer
-//                    touchInLayer = YES;
-//                }
-//            } else {
-//                CALayer *layer = sublayer;
-//                if (CGRectContainsPoint(layer.frame, touchLocation)) {
-//                    // Touch is in this rectangular layer
-//                    touchInLayer = YES;
-//                }
-//            }
-//            
-//            if(touchInLayer) {
-//                CGPoint p = [touch locationInView:self.bgImageView];
-//                
-//                CABasicAnimation *shipAnim = [CABasicAnimation animationWithKeyPath:@"position"];
-//                [shipAnim setFromValue:[NSValue valueWithCGPoint:[shipLayer position]]];
-//                [shipAnim setToValue:[NSValue valueWithCGPoint:CGPointMake(p.x, [shipLayer position].y)]];
-//                [shipAnim setDuration:1.0];
-//                
-//                [shipLayer setPosition:CGPointMake(p.x, [shipLayer position].y)];
-//                
-//                [shipLayer addAnimation:shipAnim forKey:@"ship"];
-//            }
-//        }
-//    }
-    
-//    shipLayer.frame = [[shipLayer presentationLayer] frame];
     [shipLayer setPosition:[[shipLayer presentationLayer] position]];
     [shipLayer removeAllAnimations];
     
@@ -138,12 +101,14 @@ static float dur = 10;
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [shipLayer setPosition:[[shipLayer presentationLayer] position]];
-    [shipLayer removeAllAnimations];
+    // Move ship instantly to point being touched
     
-    UITouch *t = [touches anyObject];
-    [self moveShipWithTouch:t];
-
+    CGPoint p = [[touches anyObject] locationInView:self.bgImageView];
+    
+    [CATransaction begin];
+    [CATransaction setValue: (id) kCFBooleanTrue forKey: kCATransactionDisableActions];
+    [shipLayer setPosition:CGPointMake(p.x, [[shipLayer presentationLayer] position].y)];
+    [CATransaction commit];
 }
 
 -(void) moveShipWithTouch:(UITouch *)t {
@@ -186,6 +151,20 @@ static float dur = 10;
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+-(CALayer *)newCALayerWithNSString:(NSString *)imageName
+                  andCATransform3D:(CATransform3D)transform
+                        andCGPoint:(CGPoint)point {
+    CALayer *outputLayer = [CALayer layer];
+    UIImage *img = [UIImage imageNamed:imageName];
+    outputLayer.backgroundColor = [UIColor colorWithPatternImage:img].CGColor;
+    [outputLayer setBounds:CGRectMake(0.0, 0.0, img.size.width, img.size.height)];
+    outputLayer.transform = transform;
+    [outputLayer setPosition:point];
+    [outputLayer setZPosition:5.0];
+    
+    return outputLayer;
 }
 @end
 
