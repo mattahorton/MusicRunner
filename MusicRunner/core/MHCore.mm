@@ -137,8 +137,12 @@ void CALLBACK NoteProc(HSYNC handle, DWORD channel, DWORD data, void *user)
 {
     DWORD midichan = HIWORD(data);
     DWORD param = LOWORD(data);
-//    NSLog(@"%d",midichan);
-    if (midichan == 2) { NSLog(@"uhh...");}
+    
+    if (midichan == 4) {
+        NSLog(@"%d param high", HIBYTE(param)); //Note on/off
+        NSLog(@"%d param low", LOBYTE(param)); //Key
+
+    }
     return;
 }
 
