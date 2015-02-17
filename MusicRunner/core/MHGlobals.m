@@ -26,6 +26,13 @@
     return _sharedObject;
 }
 
+-(instancetype)init{
+    if(self = [super init]){
+        self.survivors = [NSNumber numberWithInt:50298];
+    }
+    return self;
+}
+
 -(void)newCylonWithColumn:(int)col {
     [self.tsvc moveCylonWithCol:col];
 }

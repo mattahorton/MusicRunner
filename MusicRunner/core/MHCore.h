@@ -16,5 +16,6 @@
 + (MHCore *)sharedInstance;
 
 -(void) coreInit;
+-(void)stopStream;
 
 @end

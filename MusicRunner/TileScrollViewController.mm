@@ -9,6 +9,7 @@
 
 #import "TileScrollViewController.h"
 #import "MHGlobals.h"
+#import "bass.h"
 
 #define NUMCYLONS 48
 #define DIVISOR 7
@@ -76,12 +77,6 @@ CGFloat screenHeight;
     screenWidth = screenRect.size.width;
     screenHeight = screenRect.size.height;
     
-//    label = [[UILabel alloc] initWithFrame:CGRectMake(.8*screenWidth, .02*screenHeight, 100, 200)];
-//    [label setText:@"00"];
-//    [self.bgImageView addSubview:label];
-//    [label setNeedsDisplay];
-//
-//    [self.bgImageView addSubview:self.scoreLabel];
     self.bgImageView.clipsToBounds = YES;
     const CGSize viewSize = self.bgImageView.bounds.size;
     const CGSize imageSize = bgImage.size;
@@ -139,6 +134,19 @@ CGFloat screenHeight;
                                 ((CALayer*)shipLayer.presentationLayer).frame)) {
             //handle the collision
             [cylon setOpacity:0];
+            [globals setSurvivors:[NSNumber numberWithInt: [globals.survivors intValue] + 10]];
+            [self.scoreLabel setText:[globals.survivors stringValue]];
+
+        } else if ((((CALayer*)cylon.presentationLayer).position.y >= screenHeight) && (cylon.opacity == 1.0)){
+            [cylon setOpacity:0];
+            [globals setSurvivors:[NSNumber numberWithInt: [globals.survivors intValue] - 1928]];
+            [self.scoreLabel setText:[globals.survivors stringValue]];
+            if ([[globals survivors] intValue] <= 0){
+                [globals setSurvivors:[NSNumber numberWithInt:0]];
+                [self.core stopStream];
+                [self.scoreLabel setText:@"NO"];
+            }
+            
         }
     }
 }

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TileScrollViewController.h"
+#import "bass.h"
 
 @interface MHGlobals : NSObject
 
@@ -15,6 +16,7 @@
 @property (strong,nonatomic) TileScrollViewController * tsvc;
 @property (strong,nonatomic) NSNumber * spb;
 @property (strong,nonatomic) NSNumber * survivors;
+@property (nonatomic) HSTREAM stream;
 
 + (MHGlobals *)sharedInstance;
 

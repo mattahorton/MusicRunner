@@ -72,6 +72,10 @@ MHCore * core;
     core = self;
 }
 
+-(void)stopStream {
+    BASS_ChannelStop(stream);
+}
+
 void bassInit(){
     
     int err;
@@ -98,7 +102,7 @@ void bassInit(){
     
     //might not need 16 input channels but it also might not hurt anything
     
-    stream = BASS_MIDI_StreamCreateFile(false, [[[NSBundle mainBundle] pathForResource:@FILE ofType:@"mid"] UTF8String], 0, 0, BASS_STREAM_AUTOFREE, 0);
+    stream = BASS_MIDI_StreamCreateFile(false, [[[NSBundle mainBundle] pathForResource:@FILE ofType:@"mid"] UTF8String], 0, 0, BASS_STREAM_AUTOFREE|BASS_MIDI_DECAYEND, 0);
     
     // set up midi sync to get midi events
     BASS_ChannelSetSync(stream, BASS_SYNC_MIDI_EVENT|BASS_SYNC_MIXTIME, MIDI_EVENT_NOTE, NoteProc, 0);
