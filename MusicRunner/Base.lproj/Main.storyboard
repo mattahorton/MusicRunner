@@ -8,12 +8,39 @@
         <scene sceneID="fvc-bn-2Zm">
             <objects>
                 <viewController id="VQW-cH-1q0" customClass="TileScrollViewController" sceneMemberID="viewController">
-                    <imageView key="view" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Ku-I0-xNg">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mND-s0-9jD"/>
+                        <viewControllerLayoutGuide type="bottom" id="bWg-na-A2T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C6u-UD-rmU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ku-I0-xNg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50298" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLt-JH-HlJ">
+                                <rect key="frame" x="187" y="28" width="227" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="MF3-tm-MU5"/>
+                                    <constraint firstAttribute="width" constant="227" id="XOP-bp-jQP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="75"/>
+                                <color key="textColor" red="1" green="0.9961527325524635" blue="0.57266631311318639" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NLt-JH-HlJ" firstAttribute="top" secondItem="mND-s0-9jD" secondAttribute="bottom" constant="8" id="cSN-rw-fvg"/>
+                            <constraint firstAttribute="centerX" secondItem="NLt-JH-HlJ" secondAttribute="centerX" id="wwI-YO-h02"/>
+                        </constraints>
+                    </view>
                     <connections>
                         <outlet property="bgImageView" destination="5Ku-I0-xNg" id="wzb-9I-cHm"/>
+                        <outlet property="scoreLabel" destination="NLt-JH-HlJ" id="WHJ-L4-OjE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isf-vJ-MqE" userLabel="First Responder" sceneMemberID="firstResponder"/>

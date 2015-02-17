@@ -7,6 +7,7 @@
 //
 
 #import "MHCore.h"
+#import "MHGlobals.h"
 #import "bassmidi.h"
 #import "bass.h"
 
@@ -27,8 +28,14 @@
 static HSTREAM stream;
 static BASS_MIDI_FONT fonts[2];
 
+MHCore * core;
+
 
 @implementation MHCore {
+    MHGlobals * globals;
+    float spb;
+    int col;
+    DWORD lastKey;
 }
 
 + (MHCore *)sharedInstance {
@@ -52,6 +59,9 @@ static BASS_MIDI_FONT fonts[2];
     self = [super init];
     if (self) {
         [self coreInit];
+        globals = [MHGlobals sharedInstance];
+        col = 4;
+        lastKey = 60;
     }
     return self;
 }
@@ -59,6 +69,7 @@ static BASS_MIDI_FONT fonts[2];
 -(void) coreInit {
     //START BASS
     bassInit();
+    core = self;
 }
 
 void bassInit(){
@@ -91,6 +102,7 @@ void bassInit(){
     
     // set up midi sync to get midi events
     BASS_ChannelSetSync(stream, BASS_SYNC_MIDI_EVENT|BASS_SYNC_MIXTIME, MIDI_EVENT_NOTE, NoteProc, 0);
+    BASS_ChannelSetSync(stream, BASS_SYNC_MIDI_EVENT, MIDI_EVENT_TEMPO, TempoProc, 0);
     
     
     
@@ -138,11 +150,76 @@ void CALLBACK NoteProc(HSYNC handle, DWORD channel, DWORD data, void *user)
     DWORD midichan = HIWORD(data);
     DWORD param = LOWORD(data);
     
-    if (midichan == 4) {
-        NSLog(@"%d param high", HIBYTE(param)); //Note on/off
-        NSLog(@"%d param low", LOBYTE(param)); //Key
-
+    switch (midichan) {
+        case 4:
+            if(core->lastKey > LOBYTE(param)){
+                if(core->col > 1) core->col--;
+            } else if(core->lastKey < LOBYTE(param)){
+                if(core->col < 7) core->col++;
+            }
+            
+//            NSLog(@"Jimi");
+//            NSLog(@"%d param high", HIBYTE(param)); //Note on/off
+//            NSLog(@"%d param low", LOBYTE(param)); //Key
+            
+            if(HIBYTE(param) != 0) [core->globals newCylonWithColumn:core->col];
+            core->lastKey = LOBYTE(param);
+            break;
+        case 7:
+            if(core->lastKey > LOBYTE(param)){
+                if(core->col > 1) core->col--;
+            } else if(core->lastKey < LOBYTE(param)){
+                if(core->col < 7) core->col++;
+            }
+            
+//            NSLog(@"Vocal");
+//            NSLog(@"%d param high", HIBYTE(param)); //Note on/off
+//            NSLog(@"%d param low", LOBYTE(param)); //Key
+            
+            if(HIBYTE(param) != 0) [core->globals newCylonWithColumn:core->col];
+            core->lastKey = LOBYTE(param);
+            break;
+        case 6:
+            if(core->lastKey > LOBYTE(param)){
+                if(core->col > 1) core->col--;
+            } else if(core->lastKey < LOBYTE(param)){
+                if(core->col < 7) core->col++;
+            }
+            
+//            NSLog(@"Mitch");
+//            NSLog(@"%d param high", HIBYTE(param)); //Note on/off
+//            NSLog(@"%d param low", LOBYTE(param)); //Key
+            
+            if(HIBYTE(param) != 0) [core->globals newCylonWithColumn:core->col];
+            core->lastKey = LOBYTE(param);
+            break;
+        case 2:
+            if(core->lastKey > LOBYTE(param)){
+                if(core->col > 1) core->col--;
+            } else if(core->lastKey < LOBYTE(param)){
+                if(core->col < 7) core->col++;
+            }
+            
+//            NSLog(@"Noel");
+//            NSLog(@"%d param high", HIBYTE(param)); //Note on/off
+//            NSLog(@"%d param low", LOBYTE(param)); //Key
+            
+            if(HIBYTE(param) != 0) [core->globals newCylonWithColumn:core->col];
+            core->lastKey = LOBYTE(param);
+            break;
+        default:
+            break;
     }
+    
+    return;
+}
+
+void CALLBACK TempoProc(HSYNC handle, DWORD channel, DWORD data, void *user)
+{
+    NSLog(@"%d",data);
+    core->spb = (float)data/1000000.0;
+    [core->globals setSpb:[NSNumber numberWithFloat:core->spb]];
+ 
     return;
 }
 

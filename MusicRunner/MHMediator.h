@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "y-score-reader.h"
 
 typedef void (*Callback)(int);
 
