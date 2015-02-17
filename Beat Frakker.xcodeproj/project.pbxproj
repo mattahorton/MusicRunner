@@ -63,7 +63,7 @@
 		1023BAE4740C3F4E5A84E233 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B95E71351A9081B700BF3447 /* MHGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHGlobals.h; sourceTree = "<group>"; };
 		B95E71361A9081B700BF3447 /* MHGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHGlobals.m; sourceTree = "<group>"; };
-		B9800E901A8418340022ECC2 /* MusicRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9800E901A8418340022ECC2 /* Beat Frakker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beat Frakker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9800E941A8418340022ECC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9800E951A8418340022ECC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9800E971A8418340022ECC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		B9800E9E1A8418340022ECC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9800EA01A8418340022ECC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B9800EA31A8418340022ECC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B9800EA91A8418340022ECC2 /* MusicRunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicRunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9800EA91A8418340022ECC2 /* Beat FrakkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Beat FrakkerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9800EAE1A8418340022ECC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9800EAF1A8418340022ECC2 /* MusicRunnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicRunnerTests.m; sourceTree = "<group>"; };
 		B9800EBC1A8451160022ECC2 /* MHCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHCore.h; sourceTree = "<group>"; };
@@ -177,8 +177,8 @@
 		B9800E911A8418340022ECC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B9800E901A8418340022ECC2 /* MusicRunner.app */,
-				B9800EA91A8418340022ECC2 /* MusicRunnerTests.xctest */,
+				B9800E901A8418340022ECC2 /* Beat Frakker.app */,
+				B9800EA91A8418340022ECC2 /* Beat FrakkerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -356,9 +356,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B9800E8F1A8418340022ECC2 /* MusicRunner */ = {
+		B9800E8F1A8418340022ECC2 /* Beat Frakker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9800EB31A8418340022ECC2 /* Build configuration list for PBXNativeTarget "MusicRunner" */;
+			buildConfigurationList = B9800EB31A8418340022ECC2 /* Build configuration list for PBXNativeTarget "Beat Frakker" */;
 			buildPhases = (
 				D94835D3AAC3A595B7EEFCDF /* Check Pods Manifest.lock */,
 				B9800E8C1A8418340022ECC2 /* Sources */,
@@ -370,14 +370,14 @@
 			);
 			dependencies = (
 			);
-			name = MusicRunner;
+			name = "Beat Frakker";
 			productName = MusicRunner;
-			productReference = B9800E901A8418340022ECC2 /* MusicRunner.app */;
+			productReference = B9800E901A8418340022ECC2 /* Beat Frakker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B9800EA81A8418340022ECC2 /* MusicRunnerTests */ = {
+		B9800EA81A8418340022ECC2 /* Beat FrakkerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9800EB61A8418340022ECC2 /* Build configuration list for PBXNativeTarget "MusicRunnerTests" */;
+			buildConfigurationList = B9800EB61A8418340022ECC2 /* Build configuration list for PBXNativeTarget "Beat FrakkerTests" */;
 			buildPhases = (
 				B9800EA51A8418340022ECC2 /* Sources */,
 				B9800EA61A8418340022ECC2 /* Frameworks */,
@@ -388,9 +388,9 @@
 			dependencies = (
 				B9800EAB1A8418340022ECC2 /* PBXTargetDependency */,
 			);
-			name = MusicRunnerTests;
+			name = "Beat FrakkerTests";
 			productName = MusicRunnerTests;
-			productReference = B9800EA91A8418340022ECC2 /* MusicRunnerTests.xctest */;
+			productReference = B9800EA91A8418340022ECC2 /* Beat FrakkerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -412,7 +412,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B9800E8B1A8418340022ECC2 /* Build configuration list for PBXProject "MusicRunner" */;
+			buildConfigurationList = B9800E8B1A8418340022ECC2 /* Build configuration list for PBXProject "Beat Frakker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -425,8 +425,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B9800E8F1A8418340022ECC2 /* MusicRunner */,
-				B9800EA81A8418340022ECC2 /* MusicRunnerTests */,
+				B9800E8F1A8418340022ECC2 /* Beat Frakker */,
+				B9800EA81A8418340022ECC2 /* Beat FrakkerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -526,7 +526,7 @@
 /* Begin PBXTargetDependency section */
 		B9800EAB1A8418340022ECC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B9800E8F1A8418340022ECC2 /* MusicRunner */;
+			target = B9800E8F1A8418340022ECC2 /* Beat Frakker */;
 			targetProxy = B9800EAA1A8418340022ECC2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -649,7 +649,7 @@
 					"$(PROJECT_DIR)/MusicRunner/bass24-ios/mp3-free",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Beat Frakker";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -677,7 +677,7 @@
 					"$(PROJECT_DIR)/MusicRunner/bass24-ios/mp3-free",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Beat Frakker";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -697,7 +697,7 @@
 				);
 				INFOPLIST_FILE = MusicRunnerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Beat FrakkerTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicRunner.app/MusicRunner";
 			};
 			name = Debug;
@@ -712,7 +712,7 @@
 				);
 				INFOPLIST_FILE = MusicRunnerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Beat FrakkerTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicRunner.app/MusicRunner";
 			};
 			name = Release;
@@ -720,7 +720,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B9800E8B1A8418340022ECC2 /* Build configuration list for PBXProject "MusicRunner" */ = {
+		B9800E8B1A8418340022ECC2 /* Build configuration list for PBXProject "Beat Frakker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9800EB11A8418340022ECC2 /* Debug */,
@@ -729,7 +729,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9800EB31A8418340022ECC2 /* Build configuration list for PBXNativeTarget "MusicRunner" */ = {
+		B9800EB31A8418340022ECC2 /* Build configuration list for PBXNativeTarget "Beat Frakker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9800EB41A8418340022ECC2 /* Debug */,
@@ -738,7 +738,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9800EB61A8418340022ECC2 /* Build configuration list for PBXNativeTarget "MusicRunnerTests" */ = {
+		B9800EB61A8418340022ECC2 /* Build configuration list for PBXNativeTarget "Beat FrakkerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9800EB71A8418340022ECC2 /* Debug */,

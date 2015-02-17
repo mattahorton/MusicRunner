@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B9800E8F1A8418340022ECC2"
-               BuildableName = "MusicRunner.app"
-               BlueprintName = "MusicRunner"
-               ReferencedContainer = "container:MusicRunner.xcodeproj">
+               BuildableName = "Beat Frakker.app"
+               BlueprintName = "Beat Frakker"
+               ReferencedContainer = "container:Beat Frakker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B9800EA81A8418340022ECC2"
-               BuildableName = "MusicRunnerTests.xctest"
-               BlueprintName = "MusicRunnerTests"
-               ReferencedContainer = "container:MusicRunner.xcodeproj">
+               BuildableName = "Beat FrakkerTests.xctest"
+               BlueprintName = "Beat FrakkerTests"
+               ReferencedContainer = "container:Beat Frakker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B9800EA81A8418340022ECC2"
-               BuildableName = "MusicRunnerTests.xctest"
-               BlueprintName = "MusicRunnerTests"
-               ReferencedContainer = "container:MusicRunner.xcodeproj">
+               BuildableName = "Beat FrakkerTests.xctest"
+               BlueprintName = "Beat FrakkerTests"
+               ReferencedContainer = "container:Beat Frakker.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B9800E8F1A8418340022ECC2"
-            BuildableName = "MusicRunner.app"
-            BlueprintName = "MusicRunner"
-            ReferencedContainer = "container:MusicRunner.xcodeproj">
+            BuildableName = "Beat Frakker.app"
+            BlueprintName = "Beat Frakker"
+            ReferencedContainer = "container:Beat Frakker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B9800E8F1A8418340022ECC2"
-            BuildableName = "MusicRunner.app"
-            BlueprintName = "MusicRunner"
-            ReferencedContainer = "container:MusicRunner.xcodeproj">
+            BuildableName = "Beat Frakker.app"
+            BlueprintName = "Beat Frakker"
+            ReferencedContainer = "container:Beat Frakker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B9800E8F1A8418340022ECC2"
-            BuildableName = "MusicRunner.app"
-            BlueprintName = "MusicRunner"
-            ReferencedContainer = "container:MusicRunner.xcodeproj">
+            BuildableName = "Beat Frakker.app"
+            BlueprintName = "Beat Frakker"
+            ReferencedContainer = "container:Beat Frakker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
